@@ -1,4 +1,4 @@
-package com.example.loadbalancer;
+package com.tiagosansao.loadbalancer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

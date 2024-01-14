@@ -1,7 +1,6 @@
-package com.example.loadbalancer;
+package com.tiagosansao.loadbalancer;
 
-
-class LoadBalancingStrategyFactory {
+public class LoadBalancingStrategyFactory {
     public static LoadBalancingStrategy create(LoadBalancingStrategyType strategyName) {
         switch (strategyName) {
             case ROUND_ROBING:

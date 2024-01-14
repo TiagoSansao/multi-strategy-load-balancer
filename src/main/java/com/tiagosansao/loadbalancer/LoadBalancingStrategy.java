@@ -1,4 +1,4 @@
-package com.example.loadbalancer;
+package com.tiagosansao.loadbalancer;
 
 import java.util.List;
 

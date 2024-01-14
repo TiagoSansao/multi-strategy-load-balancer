@@ -20,7 +20,7 @@
             <mxPoint x="470.0000000000002" y="277" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fP1M1E38PqINTnIdfP0b-9" value="LoadBalancerController" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="fP1M1E38PqINTnIdfP0b-9" value="controllers.com.tiagosansao.loadbalancer.LoadBalancerController" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="240" y="250" width="150" height="54" as="geometry" />
         </mxCell>
         <mxCell id="fP1M1E38PqINTnIdfP0b-11" value="- lb:LoadBalancerService&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="fP1M1E38PqINTnIdfP0b-9">
