@@ -1,4 +1,4 @@
-package com.tiagosansao.loadbalancer;
+package com.tiagosansao.loadbalancer.domain;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;

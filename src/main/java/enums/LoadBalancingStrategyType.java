@@ -1,4 +1,4 @@
-package com.tiagosansao.loadbalancer;
+package enums;
 
 public enum LoadBalancingStrategyType {
     ROUND_ROBING,
