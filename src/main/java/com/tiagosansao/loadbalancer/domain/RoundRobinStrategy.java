@@ -2,9 +2,9 @@ package com.tiagosansao.loadbalancer.domain;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import com.tiagosansao.loadbalancer.domain.NodeManager;
 
 public class RoundRobinStrategy implements LoadBalancingStrategy {
-    private List<String> nodes = null;
     private final AtomicInteger curIndex;
 
     public RoundRobinStrategy() {
@@ -12,23 +12,10 @@ public class RoundRobinStrategy implements LoadBalancingStrategy {
     }
 
     @Override
-    public String chooseNode() {
+    public String chooseNode(List<String> nodes) {
         final int nodeIndex = curIndex.getAndIncrement() % nodes.size();
+        System.out.print(this.curIndex);
 
         return nodes.get(nodeIndex);
-    }
-
-    @Override
-    public void addNode(String node) {
-        if (!nodes.contains(node)) throw new IllegalStateException("The node" + node + "already was registered.");
-
-        this.nodes.add(node);
-    }
-
-    @Override
-    public void removeNode(String node) {
-        if (!nodes.contains(node)) throw new IllegalStateException("The node" + node + "was not registered.");
-
-        this.nodes.remove(node);
     }
 }
