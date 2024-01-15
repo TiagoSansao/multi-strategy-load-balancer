@@ -1,6 +1,6 @@
 package com.tiagosansao.loadbalancer.domain;
 
-import enums.LoadBalancingStrategyType;
+import com.tiagosansao.loadbalancer.enums.LoadBalancingStrategyType;
 
 public class LoadBalancingStrategyFactory {
     public static LoadBalancingStrategy create(LoadBalancingStrategyType strategyName) {
