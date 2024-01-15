@@ -1,9 +1,9 @@
 package com.tiagosansao.loadbalancer.controllers;
 
 import com.tiagosansao.loadbalancer.enums.LoadBalancingStrategyType;
+import com.tiagosansao.loadbalancer.services.LoadBalancerServiceFactory;
 import com.tiagosansao.loadbalancer.services.LoadBalancerService;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +16,7 @@ class LoadBalancerController {
 
     public LoadBalancerController() {
         LoadBalancingStrategyType strategy = LoadBalancingStrategyType.ROUND_ROBING;
-        this.loadBalancerService = new LoadBalancerService(strategy);
+        this.loadBalancerService = LoadBalancerServiceFactory.createService(strategy);
     }
 
     @RequestMapping(value = "/**", method = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.POST, RequestMethod.HEAD, RequestMethod.OPTIONS, RequestMethod.PATCH, RequestMethod.TRACE})
