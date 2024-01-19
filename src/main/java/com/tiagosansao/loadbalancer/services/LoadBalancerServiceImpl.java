@@ -14,10 +14,11 @@ class LoadBalancerServiceImpl implements LoadBalancerService {
         this.currentStrategy = LoadBalancingStrategyFactory.create(strategyType);
     }
     public String getAServerURL() {
-        List<String> nodes = NodeManager.getNodes();
+        NodeManager nodeManager = NodeManager.getInstance();
+        List<String> nodes = nodeManager.getNodes();
         String chosenNode = currentStrategy.chooseNode(nodes);
 
-        System.out.println(chosenNode + " was chosen to receive traffic.");
+        System.out.println("[I] " + chosenNode + " was chosen to receive traffic.");
 
         return chosenNode;
     }

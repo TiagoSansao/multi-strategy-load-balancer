@@ -3,21 +3,34 @@ package com.tiagosansao.loadbalancer.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+// Singleton
 public class NodeManager {
-    public static List<String> nodes = new ArrayList<String>();
+    private List<String> nodes = new ArrayList<String>();
+    private static NodeManager instance;
 
-    public static List<String> getNodes() {
+    private NodeManager() {}
+
+    public static NodeManager getInstance() {
+        if (instance == null) {
+            instance = new NodeManager();
+        }
+
+        return instance;
+    }
+
+    public List<String> getNodes() {
         return nodes;
     }
 
-    public static void addNode(String node) {
+
+    public  void addNode(String node) {
         if (nodes.contains(node)) throw new IllegalStateException("The node" + node + " already was registered.");
 
         nodes.add(node);
         System.out.println("The node " + node + " was registered successfully.");
     }
 
-    public static void removeNode(String node) {
+    public void removeNode(String node) {
         if (!nodes.contains(node)) throw new IllegalStateException("The node" + node + " was not registered.");
 
         nodes.remove(node);

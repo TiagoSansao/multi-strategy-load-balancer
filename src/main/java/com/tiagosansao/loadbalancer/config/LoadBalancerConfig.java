@@ -10,11 +10,16 @@ public class LoadBalancerConfig {
     @Bean
     CommandLineRunner commandLineRunner() {
         return args -> {
-            NodeManager.addNode("127.0.0.1");
-            NodeManager.addNode("127.0.0.2");
-            NodeManager.addNode("127.0.0.3");
+            NodeManager nodeManager = NodeManager.getInstance();
 
-            System.out.println(NodeManager.getNodes());
+            nodeManager.addNode("google.com");
+            nodeManager.addNode("yahoo.com");
+
+//            nodeManager.addNode("localhost:4321");
+//            nodeManager.addNode("localhost:4322");
+//            nodeManager.addNode("localhost:4323");
+
+            System.out.println(nodeManager.getNodes());
         };
     }
 }
